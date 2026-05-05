@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finalizar Pedido | Kukulcao</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body class="order-page-bg">
+
+    <nav class="minimal-nav fade-in-load">
+        <div class="logo"><a href="index.html" style="text-decoration: none; color: inherit;">KUKULCAO</a></div>
+        <div class="nav-cta">
+            <a href="index.html">← Volver</a>
+        </div>
+    </nav>
+
+    <main class="order-full-screen fade-in-load fade-in-load-delay-1">
+        <div class="order-card">
+            <div class="order-header-main">
+                <h2>Casi listo...</h2>
+                <p>Completa tus datos para agendar tu entrega en Cadereyta.</p>
+            </div>
+
+            <form class="order-form-standalone" id="orderForm">
+                
+                <div class="input-field">
+                    <label>Nombre Completo</label>
+                    <input type="text" id="nombre" placeholder="Ej. Juan Pérez" required>
+                </div>
+                
+
+                <div class="input-field">
+                    <label>Tu pedido</label>
+                    <select id="cantidad" required>
+                        <option value="1 Brownie ($25)">1 Brownie Individual - $25</option>
+                        <option value="Caja de 6 ($135)">Caja de 6 piezas - $135</option>
+                        <option value="Brownie Personalizado ($150-$180)">Brownie Personalizado - $150 a $180</option>
+                    </select>
+                </div>
+
+                <div class="input-field" id="container-detalles" style="display: none;">
+                    <label>Detalles de Personalización</label>
+                    <textarea id="detalles" placeholder="Ej. Fecha de bodas, invitación o mensaje escrito..." rows="2"></textarea>
+                </div>
+
+                <div class="input-field">
+                    <label>Dirección de entrega (Cadereyta / Qro.)</label>
+                    <textarea id="direccion" placeholder="Calle, número, colonia..." rows="3" required></textarea>
+                </div>
+
+                <div class="legal-disclosure" style="display: flex; align-items: start; gap: 10px;">
+                    <input type="checkbox" id="privacidad" required style="margin-top: 5px; cursor: pointer; width: auto; transform: scale(1.2);">
+                    <p style="margin: 0;">Tus datos se utilizarán para coordinar la entrega. He leído y acepto el  
+                        <a href="#" data-toggle="modal" data-target="#modalPrivacidad" style="color: var(--accent-color); font-weight: bold; text-decoration: underline;">
+                            Aviso de Privacidad
+                        </a>.
+                    </p>
+                </div>
+
+                <button type="submit" class="btn-confirm">Confirmar por WhatsApp</button>
+            </form>
+        </div>
+    </main>
+
+    <div class="modal fade" id="modalPrivacidad" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" style="border-radius: 20px; border: none; padding: 20px;">
+                <div class="modal-header" style="border-bottom: none;">
+                    <h5 class="modal-title" style="font-family: 'Playfair Display', serif; font-weight: 700; color: var(--accent-color);">Aviso de Privacidad</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" style="font-size: 0.9rem; color: var(--text-main); line-height: 1.6;">
+                    <p><strong>Kukulcao</strong> es responsable del cuidado de tu información.</p>
+                    <p>Los datos solicitados se usan exclusivamente para la logística de entrega de tus brownies en Cadereyta. No compartimos tu información con terceros ni la usamos para spam.</p>
+                    <p>Al contactarnos por WhatsApp, aceptas que usemos estos datos para dar seguimiento a tu compra.</p>
+                </div>
+                <div class="modal-footer" style="border-top: none;">
+                    <button type="button" class="btn-confirm" data-dismiss="modal" style="padding: 10px 30px; font-size: 0.9rem; width: auto;">Entendido</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
